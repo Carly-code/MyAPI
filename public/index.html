@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN / REGISTER -->
+    <main id="authPage" class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="logo">📝</div>
+
+            <h1>My Notes</h1>
+            <p class="subtitle">Your notes, all in one place.</p>
+
+            <!-- LOGIN -->
+            <section id="loginBox">
+
+                <h2>Welcome back</h2>
+
+                <input id="loginUsername" type="text" placeholder="Username" autocomplete="username">
+
+                <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
+
+                <button id="loginButton">
+                    Login
+                </button>
+
+                <p id="loginMessage" class="message"></p>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <button id="showRegister" class="link-button">
+                        Register
+                    </button>
+                </p>
+
+            </section>
+
+
+            <!-- REGISTER -->
+            <section id="registerBox" class="hidden">
+
+                <h2>Create account</h2>
+
+                <input id="registerUsername" type="text" placeholder="Username" autocomplete="username">
+
+                <input id="registerPassword" type="password" placeholder="Password" autocomplete="new-password">
+
+                <button id="registerButton">
+                    Create Account
+                </button>
+
+                <p id="registerMessage" class="message"></p>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <button id="showLogin" class="link-button">
+                        Login
+                    </button>
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- DASHBOARD -->
+    <main id="dashboardPage" class="dashboard-page hidden">
+
+        <header class="topbar">
+
+            <div>
+                <h1>My Notes</h1>
+                <p>Welcome, <span id="usernameDisplay"></span></p>
+            </div>
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+
+        </header>
+
+
+        <section class="dashboard">
+
+            <!-- CREATE NOTE -->
+            <div class="create-card">
+
+                <h2>Create a new note</h2>
+
+                <input id="noteTitle" type="text" placeholder="Note title">
+
+                <textarea id="noteContent" placeholder="Write something..."></textarea>
+
+                <button id="createNoteButton">
+                    + Add Note
+                </button>
+
+                <p id="noteMessage" class="message"></p>
+
+            </div>
+
+
+            <!-- NOTES -->
+            <section class="notes-section">
+
+                <div class="notes-heading">
+
+                    <h2>Your Notes</h2>
+
+                    <span id="noteCount">0 notes</span>
+
+                </div>
+
+                <div id="notesContainer" class="notes-grid"></div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- EDIT MODAL -->
+    <div id="editModal" class="modal hidden">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <h2>Edit Note</h2>
+
+                <button id="closeModal" class="close-button">
+                    ×
+                </button>
+
+            </div>
+
+            <input id="editTitle" type="text" placeholder="Note title">
+
+            <textarea id="editContent" placeholder="Note content"></textarea>
+
+            <div class="modal-actions">
+
+                <button id="cancelEdit" class="secondary-button">
+                    Cancel
+                </button>
+
+                <button id="saveEdit">
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
